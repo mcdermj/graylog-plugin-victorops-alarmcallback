@@ -56,7 +56,7 @@ public class VictorOpsAlarmCallback implements AlarmCallback {
             baseUrl = transportUri.getScheme() + "://" + transportUri.getAuthority() + webListenUri.getPath();
         }
 
-        this.proxyUri = proxyUri;
+        this.proxyUri = httpProxyUri;
     }
 
     @Override
