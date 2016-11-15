@@ -88,7 +88,6 @@ public class VictorOpsAlarmCallback implements AlarmCallback {
 
     @Override
     public void call(Stream stream, AlertCondition.CheckResult checkResult) throws AlarmCallbackException {
-        //  Fill this with chocolaty goodness
         if(!config.getString("customEntityId").isEmpty()) {
             client.sendAlert(stream, checkResult, config.getString("customEntityId"));
         } else {
