@@ -129,5 +129,8 @@ public class VictorOpsAlarmCallback implements AlarmCallback {
         String apiKey = config.getString("apiKey");
         if(apiKey.isEmpty())
             throw new ConfigurationException("Please enter the VictorOps API Key");
+
+        if(config.getString("routingKey").isEmpty())
+            throw new ConfigurationException("Please enter a VictorOps routing key");
     }
 }
