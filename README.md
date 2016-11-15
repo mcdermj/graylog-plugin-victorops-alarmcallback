@@ -1,4 +1,4 @@
-# VictorOpsAlarmCallback Plugin for Graylog
+# VictorOps Alarm Callback Plugin for Graylog
 
 [![Build Status](https://travis-ci.org/mcdermj/graylog-plugin-victorops-alarmcallback.svg?branch=master)](https://travis-ci.org/mcdermj/graylog-plugin-victorops-alarmcallback)
 
