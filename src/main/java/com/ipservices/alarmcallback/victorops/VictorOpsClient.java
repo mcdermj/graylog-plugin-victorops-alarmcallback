@@ -189,10 +189,12 @@ public class VictorOpsClient {
             stateStartTime = checkResult.getTriggeredAt().toDate().getTime();
             stateMessage = checkResult.getResultDescription();
 
-            final MessageSummary message = checkResult.getMatchingMessages().get(0);
-            messageText = message.getMessage();
-            messageId = message.getId();
-            messageUrl = baseUrl + "messages/" + message.getIndex() + "/" + message.getId();
+            if(checkResult.getMatchingMessages() != null) {
+                final MessageSummary message = checkResult.getMatchingMessages().get(0);
+                messageText = message.getMessage();
+                messageId = message.getId();
+                messageUrl = baseUrl + "messages/" + message.getIndex() + "/" + message.getId();
+            }
         }
 	}
 }
