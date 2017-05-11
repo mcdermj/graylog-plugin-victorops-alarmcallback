@@ -190,7 +190,7 @@ public class VictorOpsClient {
             stateMessage = checkResult.getResultDescription();
 
             if(checkResult.getMatchingMessages() != null &&
-               !checkResult.getMatchingMessage().isEmpty()) {
+               !checkResult.getMatchingMessages().isEmpty()) {
                 final MessageSummary message = checkResult.getMatchingMessages().get(0);
                 messageText = message.getMessage();
                 messageId = message.getId();
