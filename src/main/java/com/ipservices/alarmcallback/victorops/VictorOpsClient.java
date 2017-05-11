@@ -189,7 +189,8 @@ public class VictorOpsClient {
             stateStartTime = checkResult.getTriggeredAt().toDate().getTime();
             stateMessage = checkResult.getResultDescription();
 
-            if(checkResult.getMatchingMessages() != null) {
+            if(checkResult.getMatchingMessages() != null &&
+               !checkResult.getMatchingMessage().isEmpty()) {
                 final MessageSummary message = checkResult.getMatchingMessages().get(0);
                 messageText = message.getMessage();
                 messageId = message.getId();
