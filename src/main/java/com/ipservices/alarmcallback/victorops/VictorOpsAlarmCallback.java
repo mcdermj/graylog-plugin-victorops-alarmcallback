@@ -49,12 +49,16 @@ public class VictorOpsAlarmCallback implements AlarmCallback {
     private URI proxyUri;
 
     @Inject
-    public VictorOpsAlarmCallback(@Named("web_endpoint_uri") @Nullable URI webUri, @Named("rest_transport_uri") URI transportUri, @Named("web_listen_uri") URI webListenUri, @Named("http_proxy_uri") @Nullable URI httpProxyUri) {
-        if(webUri != null) {
-            baseUrl = webUri.toString();
+    public VictorOpsAlarmCallback(@Named("web_endpoint_uri") @Nullable URI webUri, @Named("rest_transport_uri") @Nullable URI transportUri, @Named("web_listen_uri") URI webListenUri, @Named("http_proxy_uri") @Nullable URI httpProxyUri) {
+        if(webUri == null) {
+            if(transportUri == null) {
+                baseUrl = webListenUri.getScheme() + "://" + webListenUri.getAuthority() + webListenUri.getPath();
+            } else {
+                baseUrl = transportUri.getScheme() + "://" + transportUri.getAuthority() + webListenUri.getPath();
+            }
         } else {
-            baseUrl = transportUri.getScheme() + "://" + transportUri.getAuthority() + webListenUri.getPath();
-        }
+            baseUrl = webUri.toString();
+	}
 
         this.proxyUri = httpProxyUri;
     }
