@@ -7,7 +7,7 @@
 
     <groupId>com.ipservices.alarmcallback.victorops</groupId>
     <artifactId>graylog-plugin-victorops-alarmcallback</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -25,7 +25,7 @@
         <connection>scm:git:git@github.com:mcdermj/graylog-plugin-victorops-alarmcallback.git</connection>
         <developerConnection>scm:git:git@github.com:mcdermj/graylog-plugin-victorops-alarmcallback.git</developerConnection>
         <url>https://github.com/mcdermj/graylog-plugin-victorops-alarmcallback</url>
-        <tag>HEAD</tag>
+        <tag>1.0.3</tag>
     </scm>
 
     <properties>
